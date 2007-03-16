@@ -5,46 +5,58 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	GD
 %define	pnam	SecurityImage
-Summary:	GD::SecurityImage - Security image (captcha) generator.
-#Summary(pl):	
+Summary:	GD::SecurityImage - Security image (captcha) generator
+Summary(pl.UTF-8):	GD::SecurityImage - generator obrazków zabezpieczających (captcha)
 Name:		perl-GD-SecurityImage
 Version:	1.63
 Release:	0.1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/GD/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	3a7c89f929e3d3bb4c0e2abf74685694
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl(GD)
+BuildRequires:	perl-GD
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %define		_noautoreq	'perl(Image::Magick)'
 
 %description
-The (so called) "Security Images" are so popular. Most internet 
-software use these in their registration screens to block robot programs
-(which may register tons of  fake member accounts). Security images are
-basicaly, graphical CAPTCHAs (Completely Automated Public Turing Test to 
-Tell Computers and Humans Apart). This module gives you a basic interface 
-to create such an image. The final output is the actual graphic data, 
-the mime type of the graphic and the created random string.
+The (so called) "Security Images" are so popular. Most Internet 
+software use these in their registration screens to block robot
+programs (which may register tons of fake member accounts). Security
+images are basicaly, graphical CAPTCHAs (Completely Automated Public
+Turing Test to Tell Computers and Humans Apart). This module gives you
+a basic interface to create such an image. The final output is the
+actual graphic data, the MIME type of the graphic and the created
+random string.
 
-The module also has some "styles" that are used to create the background 
-of the image.
+The module also has some "styles" that are used to create the
+background of the image.
 
 If you are an Authen::Captcha user, see GD::SecurityImage::AC
 for migration from Authen::Captcha to GD::SecurityImage.
 
+%description -l pl.UTF-8
+(Tak zwane) obrazki zabezpieczające ("Security Images") są bardzo
+popularne. Większość oprogramowania w Internecie używach na ekranach
+rejestracji do blokowania robotów (które mogłyby zarejestrować tysiące
+fałszywych kont). Obrazki zabezpieczające to zasadniczo graficzne
+CAPTCHA (Completely Automated Public Turing Test to Tell Computers and
+Humans Apart - w pełni zautomatyzowane publiczne testy Turinga
+odróżniające komputery od ludzi). Ten moduł udostępnia podstawowy
+interfejs do tworzenia takich obrazków. Ostateczne wyjście to właściwe
+dane graficzne, typ MIME danych graficznych i utworzony ciąg losowy.
 
+Moduł ma także trochę "styli", służących do tworzenia tła obrazka.
 
-# %description -l pl
-# TODO
+Użytkownicy modułu Authen::Captcha mogą obejrzeć opis
+GD::SecurityImage::AC w celu migracji z Authen::Captcha na
+GD::SecurityImage.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
