@@ -15,6 +15,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/GD/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	3a7c89f929e3d3bb4c0e2abf74685694
+URL:		http://search.cpan.org/dist/GD-SecurityImage/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
