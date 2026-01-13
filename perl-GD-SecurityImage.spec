@@ -8,7 +8,7 @@ Summary:	GD::SecurityImage - Security image (captcha) generator
 Summary(pl.UTF-8):	GD::SecurityImage - generator obrazków zabezpieczających (captcha)
 Name:		perl-GD-SecurityImage
 Version:	1.71
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
